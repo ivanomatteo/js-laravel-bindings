@@ -1,0 +1,17 @@
+{
+  "name": "js-laravel-bindings",
+  "version": "0.0.0",
+  "description": "Javascript Bindigns for laravel: routes, constants, localization",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanomatteo/js-laravel-bindings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanomatteo/js-laravel-bindings/issues"
+  },
+  "homepage": "https://github.com/ivanomatteo/js-laravel-bindings#readme"
+}
