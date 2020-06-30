@@ -6,7 +6,7 @@ export class Localize {
         this.locale = locale;
     }
 
-    bindVue() {
+    getVuePlugin() {
         let _localize = this;
         const plugin = {
             install() {
@@ -15,15 +15,15 @@ export class Localize {
                 }
                 Vue.filter("tr", (value) => {
                     if (value) {
-                        return this.translate(value);
+                        return _localize.translate(value);
                     }
                 });
             }
         };
-        Vue.use(plugin);
+        return plugin;
     }
 
-    static bindVueDefault() {
+    static getVuePluginNoTranslate() {
         let _localize = this;
         const plugin = {
             install() {
@@ -35,7 +35,7 @@ export class Localize {
                 });
             }
         };
-        Vue.use(plugin);
+        return plugin;
     }
 
     translate(str) {
