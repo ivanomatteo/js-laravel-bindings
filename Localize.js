@@ -13,14 +13,14 @@ export class Localize {
                 Vue.prototype.$translate = (str) => {
                     return _localize.translate(str);
                 }
+                Vue.filter("tr", (value) => {
+                    if (value) {
+                        return this.translate(value);
+                    }
+                });
             }
         };
         Vue.use(plugin);
-        Vue.filter("tr", (value) => {
-            if (value) {
-                return this.translate(value);
-            }
-        });
     }
 
     static bindVueDefault() {
@@ -30,12 +30,12 @@ export class Localize {
                 Vue.prototype.$translate = (str) => {
                     return sstr;
                 }
+                Vue.filter("tr", (value) => {
+                    return value;
+                });
             }
         };
         Vue.use(plugin);
-        Vue.filter("tr", (value) => {
-            return value;
-        });
     }
 
     translate(str) {
@@ -60,3 +60,15 @@ export class Localize {
     }
 
 }
+
+
+
+export const LocalizeVuePlugin = {
+
+    install() {
+        Vue.prototype.$translate = (str) => {
+            return _localize.translate(str);
+        }
+    }
+
+};
