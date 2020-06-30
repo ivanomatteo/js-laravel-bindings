@@ -1,5 +1,7 @@
 "use strict";
 
+import { escapeRegExp } from './utils';
+
 export class LRouteClass {
 
 
@@ -23,7 +25,7 @@ export class LRouteClass {
                 } else {
                     for (let a in args) {
                         let regex = new RegExp(
-                            "{" + this.escapeRegExp(a) + "\\??}"
+                            "{" + escapeRegExp(a) + "\\??}"
                         );
 
                         uri = uri.replace(regex, args[a]);
@@ -46,9 +48,6 @@ export class LRouteClass {
         throw new Error("route " + name + " not found");
     }
 
-    escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
-    }
 }
 
 
