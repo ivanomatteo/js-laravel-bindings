@@ -1,13 +1,18 @@
-import { Routes } from "./Routes";
+"use strict";
 
-class LRouteClass {
+export class LRouteClass {
+
+
+    constructor(routes){
+        this.routes = routes;
+    }
 
     get(name) {
-        return Routes[name];
+        return this.routes[name];
     }
 
     compile(name, args = null) {
-        let r = Routes[name];
+        let r = this.routes[name];
         if (r && r.uri) {
             let uri = r.uri;
             if (args) {
@@ -48,8 +53,3 @@ class LRouteClass {
 
 
 
-export const LRoute = new LRouteClass();
-export const lroute = (name, args = null) => {
-
-    return LRoute.compile(name, args);
-};

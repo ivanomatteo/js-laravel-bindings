@@ -1,21 +1,9 @@
+"use strict";
+
 export class Localize {
 
     constructor(locale) {
         this.locale = locale;
-    }
-
-    static load(lang) {
-
-        let promise = new Promise(function (resolve, reject) {
-            import( /* webpackChunkName: "./js/language" */ './lang/' + lang)
-                .then(l => {
-                    resolve(new Localize(l.default));
-                }).catch(err => {
-                    reject(err);
-                });
-        });
-
-        return promise;
     }
 
     bindVue() {
