@@ -1,6 +1,6 @@
 "use strict";
 
-import { escapeRegExp } from './utils';
+import { escapeRegExp } from  'js-utils-imatteo';
 
 export class LRouteClass {
 

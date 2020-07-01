@@ -1,5 +1,6 @@
 
-import { escapeRegExp } from './utils';
+import { escapeRegExp } from  'js-utils-imatteo';
+
 export class Localize {
 
     constructor(locale, params = true, pluralization = true) {
@@ -141,13 +142,3 @@ export class Localize {
 }
 
 
-
-export const LocalizeVuePlugin = {
-
-    install() {
-        Vue.prototype.$translate = (str) => {
-            return _localize.translate(str);
-        }
-    }
-
-};

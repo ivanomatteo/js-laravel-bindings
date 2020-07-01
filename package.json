@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/ivanomatteo/js-laravel-bindings/issues"
   },
-  "homepage": "https://github.com/ivanomatteo/js-laravel-bindings#readme"
+  "homepage": "https://github.com/ivanomatteo/js-laravel-bindings#readme",
+  "dependencies": {
+    "js-utils-imatteo": "^0.1.1"
+  }
 }

@@ -1,7 +1,6 @@
 "use strict";
 
-import { Localize } from './Localize';
-import { LRouteClass } from './LRoute'; 
+export * from './Localize';
+export * from './LRoute';
 
 
-export { LRouteClass, Localize };
