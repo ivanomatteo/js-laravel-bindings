@@ -9,6 +9,18 @@ export class LRouteClass {
         this.routes = routes;
     }
 
+    getVuePlugin() {
+        let _lroute = this;
+        const plugin = {
+            install() {
+                Vue.prototype.$lroute = (name, args) => {
+                    return _lroute.compile(name, args);
+                }
+            }
+        };
+        return plugin;
+    }
+
     get(name) {
         return this.routes[name];
     }
