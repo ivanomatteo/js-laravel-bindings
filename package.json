@@ -1,6 +1,6 @@
 {
   "name": "js-laravel-bindings",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Javascript Bindigns for laravel: routes, constants, localization",
   "main": "index.js",
   "scripts": {},
