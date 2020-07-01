@@ -45,6 +45,9 @@ export class Localize {
         if (!str) {
             return str;
         }
+        if(typeof str !== 'string'){
+            str = ''+str;
+        }
         let t = this.locale['__json__'] ? this.locale['__json__'][str] : null;
         if (t) {
             return t;
