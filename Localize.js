@@ -14,8 +14,8 @@ export class Localize {
         let _localize = this;
         const plugin = {
             install() {
-                Vue.prototype.$translate = (str) => {
-                    return _localize.translate(str);
+                Vue.prototype.$translate = (str,args,num = 1) => {
+                    return _localize.translate(str,args,num);
                 }
                 Vue.filter("tr", (value) => {
                     if (value) {

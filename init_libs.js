@@ -2,12 +2,25 @@
 
 import { Localize } from 'js-laravel-bindings';
 
+export const locale = {
+    translate: (str, args, num = 1)=>{
+        return str;
+    }
+}
+
+
 export function loadLocale(lang) {
 
     let promise = new Promise(function (resolve, reject) {
         import( /* webpackChunkName: "./js/language" */  './lang/' + lang)
             .then(l => {
-                resolve(new Localize(l.default));
+                let localize = new Localize(l.default);
+
+                locale.translate = (str, args, num = 1)=>{
+                    return localize.translate(str, args, num);
+                };
+    
+                resolve(localize);
             }).catch(err => {
                 reject(err);
             });
