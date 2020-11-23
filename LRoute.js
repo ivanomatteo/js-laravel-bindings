@@ -55,7 +55,7 @@ export class LRouteClass {
                 uri.substr(0, uri.length - 1);
             }
 
-            return '/' + uri;
+            return '/' + uri.replace(/\/+$/, '');
         }
         throw new Error("route " + name + " not found");
     }
